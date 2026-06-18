@@ -37,9 +37,24 @@ python3 -m http.server 8000
 # Åpne http://localhost:8000
 ```
 
+Nettstedet er salgsorientert med tillitsbyggende seksjoner: tillitsstripe,
+nøkkeltall, «hvorfor velge oss», kostnadsdekning, prosess-steg,
+kundeuttalelser, FAQ og tydelige call-to-action (gratis vurdering / ring).
+
+## Plassholdere som bør byttes ut før lansering
+
+- **Kundeuttalelser** på forsiden er illustrative/anonymiserte og må erstattes
+  med ekte, samtykkede sitater (eller fjernes). Se seksjonen merket
+  `KUNDEUTTALELSER (plassholder ...)` i `index.html`.
+- **Nøkkeltall** (f.eks. «15+ års erfaring») er anslag og bør verifiseres.
+- **Portrettet** er en nøytral SVG-plassholder. Bytt ut SVG-en i `.portrait`
+  med et faktisk bilde.
+- **Kostnads-/dekningstekst** er generell informasjon og bør kvalitetssikres
+  juridisk for det enkelte firma.
+
 ## Merknader
 
 - Kontaktskjemaet har klientside-bekreftelse og ingen backend; koble til en
   e-post-/skjematjeneste ved produksjonssetting.
-- Portrettet er en nøytral plassholder. Bytt ut SVG-en i `.portrait` med et
-  faktisk bilde ved behov.
+- Markedsføringen er holdt edruelig i tråd med advokaters
+  markedsføringsregler – unngå å love bestemte resultater.

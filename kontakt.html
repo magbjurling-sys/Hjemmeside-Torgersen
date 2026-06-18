@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Advokatfirmaet Torgersen</title>
-  <meta name="description" content="Ta kontakt med Advokatfirmaet Torgersen per telefon, e-post eller kontaktskjema for en uforpliktende prat. Olav Brunborgs vei 6, 1396 Billingstad.">
+  <title>Kontakt | Gratis og uforpliktende vurdering – Advokatfirmaet Torgersen</title>
+  <meta name="description" content="Ta kontakt for en gratis og uforpliktende vurdering av saken din. Telefon 98 67 29 29, e-post eller kontaktskjema. Olav Brunborgs vei 6, 1396 Billingstad. Oppdrag over hele landet.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,16 +26,31 @@
     <section class="hero">
       <div class="container">
         <span class="eyebrow">Kontakt</span>
-        <h1>Ta gjerne kontakt med oss.</h1>
-        <p class="lead">Ta gjerne kontakt med oss enten per telefon, e-post eller kontaktskjema
-          for en uforpliktende prat om saken din.</p>
+        <h1>Gratis vurdering av saken din.</h1>
+        <p class="lead">Ta gjerne kontakt per telefon, e-post eller kontaktskjema for en
+          uforpliktende prat. Vi svarer raskt, og det koster ingenting å høre hvor du står.</p>
+        <div class="hero-actions">
+          <a href="tel:+4798672929" class="phone"><span>Ring oss direkte</span>98 67 29 29</a>
+        </div>
       </div>
     </section>
+
+    <!-- TILLITSSTRIPE -->
+    <div class="trustbar">
+      <div class="container">
+        <div class="item"><strong>Svar raskt</strong>vi tar kontakt tilbake</div>
+        <div class="item"><strong>Gratis</strong>uforpliktende førstevurdering</div>
+        <div class="item"><strong>Hele landet</strong>telefon, video og e-post</div>
+        <div class="item"><strong>Fortrolig</strong>alt behandles konfidensielt</div>
+      </div>
+    </div>
 
     <section class="section">
       <div class="container contact-grid">
         <div class="contact-info reveal">
           <h2>Kontaktinformasjon</h2>
+          <p>Fortell oss kort om situasjonen din, så gir vi deg en ærlig vurdering av
+            mulighetene – og avklarer hvem som dekker advokatutgiftene.</p>
           <dl>
             <dt>Besøksadresse</dt>
             <dd>Olav Brunborgs vei 6<br>1396 Billingstad</dd>
@@ -67,13 +82,24 @@
               <input type="tel" id="telefon" name="telefon" autocomplete="tel">
             </div>
             <div class="form-field">
-              <label for="melding">Melding</label>
+              <label for="tema">Hva gjelder saken?</label>
+              <input list="temaer" id="tema" name="tema" placeholder="Velg eller skriv inn">
+              <datalist id="temaer">
+                <option value="Personskadeerstatning"></option>
+                <option value="Voldsoffererstatning"></option>
+                <option value="Trygderett / NAV"></option>
+                <option value="Annet"></option>
+              </datalist>
+            </div>
+            <div class="form-field">
+              <label for="melding">Kort om saken din</label>
               <textarea id="melding" name="melding" rows="5" required></textarea>
             </div>
             <button type="submit" class="btn">Send henvendelse</button>
             <p class="form-status" role="status" aria-live="polite" style="margin-top:1rem"></p>
-            <p class="form-note">Henvendelsen er ikke bindende, og det opprettes ingen
-              klientrelasjon før et oppdrag er bekreftet.</p>
+            <p class="form-note">Henvendelsen er uforpliktende, og det opprettes ingen
+              klientrelasjon før et oppdrag er bekreftet. Ikke send sensitive opplysninger før
+              vi har bekreftet at vi kan bistå.</p>
           </form>
         </div>
       </div>
@@ -102,7 +128,7 @@
         <div>
           <span class="brand">Advokatfirmaet Torgersen</span>
           <p style="margin-top:1rem;">Din personskadeadvokat. Spesialisert innen
-            personskadeerstatning, voldsoffererstatning og trygderett.</p>
+            personskadeerstatning, voldsoffererstatning og trygderett. Oppdrag over hele landet.</p>
         </div>
         <div>
           <h4>Kontakt</h4>
@@ -125,6 +151,11 @@
       </div>
     </div>
   </footer>
+
+  <nav class="sticky-cta" aria-label="Rask kontakt">
+    <a href="tel:+4798672929">Ring 98 67 29 29</a>
+    <a href="#kontaktskjema">Send melding</a>
+  </nav>
 
   <script src="js/main.js"></script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты | Бесплатная и необязывающая оценка – Advokatfirmaet Torgersen</title>
+  <meta name="description" content="Свяжитесь с нами для бесплатной и необязывающей оценки вашего дела. Телефон 98 67 29 29, электронная почта или контактная форма. Olav Brunborgs vei 6, 1396 Billingstad. Ведём дела по всей стране.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">Advokatfirmaet <span>Torgersen</span></a>
+      <button class="nav-toggle" aria-label="Меню" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Главная</a></li>
+        <li class="has-sub">
+          <a href="fagomrader.html" class="parent">Области права<span class="caret">▾</span></a>
+          <ul class="submenu">
+            <li><a href="fagomrader.html">Все области права</a></li>
+            <li><a href="personskade.html">Телесные повреждения</a></li>
+            <li><a href="bistandsadvokat.html">Адвокат потерпевшего</a></li>
+            <li><a href="voldsoffererstatning.html">Компенсация жертвам насилия</a></li>
+            <li><a href="nav-saker.html">NAV / социальные выплаты</a></li>
+            <li><a href="familierett.html">Семейное право</a></li>
+          </ul>
+        </li>
+        <li><a href="priser.html">Цены</a></li>
+        <li><a href="ansatte.html">Наша команда</a></li>
+        <li><a href="om-firmaet.html">О фирме</a></li>
+        <li><a href="kontakt.html" class="active">Контакты</a></li>
+        <li class="lang-switch">
+          <a href="kontakt.html" class="active">NO</a>
+          <a href="en/kontakt.html">EN</a>
+          <a href="pl/kontakt.html">PL</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Контакты</span>
+        <h1>Бесплатная оценка вашего дела.</h1>
+        <p class="lead">Свяжитесь с нами по телефону, электронной почте или через контактную форму
+          для необязывающей беседы. Мы отвечаем быстро, и узнать, в каком вы положении, ничего не
+          стоит.</p>
+        <div class="hero-actions">
+          <a href="tel:+4798672929" class="phone"><span>Позвоните нам напрямую</span>98 67 29 29</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TILLITSSTRIPE -->
+    <div class="trustbar">
+      <div class="container">
+        <div class="item"><strong>Быстрый ответ</strong>мы перезвоним вам</div>
+        <div class="item"><strong>Бесплатно</strong>необязывающая первичная оценка</div>
+        <div class="item"><strong>Вся страна</strong>телефон, видео и эл. почта</div>
+        <div class="item"><strong>Конфиденциально</strong>всё обрабатывается конфиденциально</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <h2>Контактная информация</h2>
+          <p>Расскажите нам коротко о вашей ситуации, и мы дадим честную оценку перспектив, а
+            также выясним, кто покрывает расходы на адвоката.</p>
+          <dl>
+            <dt>Адрес для посещения</dt>
+            <dd>Olav Brunborgs vei 6<br>1396 Billingstad</dd>
+            <dt>Телефон</dt>
+            <dd><a href="tel:+4798672929">98 67 29 29</a></dd>
+            <dt>Эл. почта</dt>
+            <dd>
+              <a href="mailto:at@advokattorgersen.no">at@advokattorgersen.no</a><br>
+              <a href="mailto:post@advokattorgersen.no">post@advokattorgersen.no</a>
+            </dd>
+            <dt>Регион</dt>
+            <dd>Аскер · дела по всей стране</dd>
+          </dl>
+        </div>
+
+        <div class="reveal">
+          <h2>Отправьте нам сообщение</h2>
+          <!-- Bytt REPLACE_WITH_YOUR_ID med din egen Formspree-skjema-ID (formspree.io). -->
+          <form id="kontaktskjema" action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" novalidate>
+            <div class="form-field">
+              <label for="navn">Имя</label>
+              <input type="text" id="navn" name="navn" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="epost">Эл. почта</label>
+              <input type="email" id="epost" name="epost" required autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="telefon">Телефон</label>
+              <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+            </div>
+            <div class="form-field">
+              <label for="tema">Чего касается ваше дело?</label>
+              <input list="temaer" id="tema" name="tema" placeholder="Выберите или впишите">
+              <datalist id="temaer">
+                <option value="Возмещение вреда здоровью"></option>
+                <option value="Компенсация жертвам насилия"></option>
+                <option value="Право социального страхования / NAV"></option>
+                <option value="Другое"></option>
+              </datalist>
+            </div>
+            <div class="form-field">
+              <label for="melding">Коротко о вашем деле</label>
+              <textarea id="melding" name="melding" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Отправить обращение</button>
+            <p class="form-status" role="status" aria-live="polite" style="margin-top:1rem"></p>
+            <p class="form-note">Обращение ни к чему не обязывает, и клиентские отношения не
+              возникают до подтверждения поручения. Не отправляйте конфиденциальные сведения, пока
+              мы не подтвердили, что можем оказать вам помощь.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-head reveal" style="margin-bottom:1.5rem">
+          <span class="eyebrow">Как нас найти</span>
+          <h2>Olav Brunborgs vei 6, 1396 Billingstad</h2>
+        </div>
+        <div class="reveal" style="border:1px solid var(--line); box-shadow:var(--shadow)">
+          <iframe
+            title="Карта к Advokatfirmaet Torgersen"
+            src="https://www.google.com/maps?q=Olav%20Brunborgs%20vei%206,%201396%20Billingstad&output=embed"
+            width="100%" height="420" style="border:0; display:block;"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="brand">Advokatfirmaet Torgersen</span>
+          <p style="margin-top:1rem;">Ваш адвокат по телесным повреждениям. Специализируемся на
+            возмещении вреда здоровью, компенсации жертвам насилия и праве социального страхования.
+            Ведём дела по всей стране.</p>
+          <img src="../images/medlem-advokatforeningen.png" alt="Член Норвежской ассоциации адвокатов"
+               style="margin-top:1.2rem;width:170px;opacity:.85" loading="lazy">
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <p>Olav Brunborgs vei 6<br>1396 Billingstad<br><br>
+            Тел.: <a href="tel:+4798672929">98 67 29 29</a><br>
+            <a href="mailto:at@advokattorgersen.no">at@advokattorgersen.no</a><br>
+            <a href="mailto:post@advokattorgersen.no">post@advokattorgersen.no</a></p>
+        </div>
+        <div>
+          <h4>Страницы</h4>
+          <p><a href="index.html">Главная</a><br>
+            <a href="fagomrader.html">Области права</a><br>
+            <a href="priser.html">Цены</a><br>
+            <a href="ansatte.html">Наша команда</a><br>
+            <a href="om-firmaet.html">О фирме</a><br>
+            <a href="karriere.html">Карьера</a><br>
+            <a href="resultater-og-artikler.html">Результаты и статьи</a><br>
+            <a href="kontakt.html">Контакты</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Advokatfirmaet Torgersen</span>
+        <span>Аскер · Дела по всей стране</span>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="sticky-cta" aria-label="Быстрый контакт">
+    <a href="tel:+4798672929">Позвонить 98 67 29 29</a>
+    <a href="#kontaktskjema">Отправить сообщение</a>
+  </nav>
+
+  <script src="../js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

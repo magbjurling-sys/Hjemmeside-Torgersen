@@ -36,6 +36,35 @@ if ('IntersectionObserver' in window && reveals.length) {
 
 // Kontaktskjema – sender via Formspree når endepunkt er satt opp,
 // ellers vises en lokal bekreftelse (demo-modus).
+// Meldinger tilpasses sidens språk (<html lang>): no / en / pl.
+const I18N = {
+  no: {
+    invalid: 'Fyll inn navn, e-post og en kort beskrivelse av saken.',
+    demo: 'Takk! (Demo) Koble skjemaet til Formspree for å motta henvendelser på e-post. Ring gjerne 98 67 29 29.',
+    sending: 'Sender …',
+    ok: 'Takk for henvendelsen! Vi tar kontakt med deg så snart som mulig.',
+    fail: 'Noe gikk galt. Ring oss gjerne på 98 67 29 29, eller send e-post til at@advokattorgersen.no.',
+    neterr: 'Kunne ikke sende nå. Ring oss på 98 67 29 29, eller send e-post til at@advokattorgersen.no.',
+  },
+  en: {
+    invalid: 'Please enter your name, email and a short description of your case.',
+    demo: 'Thank you! (Demo) Connect the form to Formspree to receive enquiries by email. Feel free to call 98 67 29 29.',
+    sending: 'Sending …',
+    ok: 'Thank you for your enquiry! We will get back to you as soon as possible.',
+    fail: 'Something went wrong. Please call us on 98 67 29 29, or email at@advokattorgersen.no.',
+    neterr: 'Could not send right now. Please call us on 98 67 29 29, or email at@advokattorgersen.no.',
+  },
+  pl: {
+    invalid: 'Podaj imię i nazwisko, adres e-mail oraz krótki opis sprawy.',
+    demo: 'Dziękujemy! (Demo) Podłącz formularz do Formspree, aby otrzymywać zgłoszenia e-mailem. Zadzwoń do nas: 98 67 29 29.',
+    sending: 'Wysyłanie …',
+    ok: 'Dziękujemy za wiadomość! Skontaktujemy się z Tobą najszybciej, jak to możliwe.',
+    fail: 'Coś poszło nie tak. Zadzwoń do nas: 98 67 29 29 lub napisz na at@advokattorgersen.no.',
+    neterr: 'Nie udało się wysłać. Zadzwoń do nas: 98 67 29 29 lub napisz na at@advokattorgersen.no.',
+  },
+};
+const T = I18N[(document.documentElement.lang || 'no').slice(0, 2)] || I18N.no;
+
 const form = document.querySelector('#kontaktskjema');
 if (form) {
   const status = form.querySelector('.form-status');
@@ -49,7 +78,7 @@ if (form) {
     e.preventDefault();
 
     if (!form.checkValidity()) {
-      setStatus('Fyll inn navn, e-post og en kort beskrivelse av saken.', false);
+      setStatus(T.invalid, false);
       form.reportValidity();
       return;
     }
@@ -59,14 +88,14 @@ if (form) {
 
     // Demo-modus: ingen backend koblet til ennå.
     if (!configured) {
-      setStatus('Takk! (Demo) Koble skjemaet til Formspree for å motta henvendelser på e-post. Ring gjerne 98 67 29 29.');
+      setStatus(T.demo);
       form.reset();
       return;
     }
 
     const btn = form.querySelector('button[type="submit"]');
     const original = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sender …'; }
+    if (btn) { btn.disabled = true; btn.textContent = T.sending; }
 
     try {
       const res = await fetch(action, {
@@ -75,13 +104,13 @@ if (form) {
         headers: { Accept: 'application/json' },
       });
       if (res.ok) {
-        setStatus('Takk for henvendelsen! Vi tar kontakt med deg så snart som mulig.');
+        setStatus(T.ok);
         form.reset();
       } else {
-        setStatus('Noe gikk galt. Ring oss gjerne på 98 67 29 29, eller send e-post til at@advokattorgersen.no.', false);
+        setStatus(T.fail, false);
       }
     } catch (err) {
-      setStatus('Kunne ikke sende nå. Ring oss på 98 67 29 29, eller send e-post til at@advokattorgersen.no.', false);
+      setStatus(T.neterr, false);
     } finally {
       if (btn) { btn.disabled = false; btn.textContent = original; }
     }

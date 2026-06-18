@@ -9,25 +9,39 @@ og en varm gull-aksent. Innholdet (tekst og struktur) er hentet fra
 
 ## Sider
 
-| Fil | Innhold |
-| --- | --- |
-| `index.html` | Forside med intro, fagområder og kontakt-CTA |
-| `fagomrader.html` | Personskade, voldsoffererstatning, trygderett, mekling |
-| `ansatte.html` | Ansatte – advokater, fullmektiger og assistenter med kort/portrett |
-| `om-firmaet.html` | Om firmaet og CV for advokat Anette Torgersen |
-| `kontakt.html` | Kontaktinfo, kontaktskjema og kart |
+Nettstedet har 43 sider per språk:
+
+- **Hovedsider:** `index`, `fagomrader`, `ansatte`, `om-firmaet`, `priser`,
+  `karriere`, `resultater-og-artikler`, `kontakt`
+- **Fagområder (hub + undersider):** `personskade`, `bistandsadvokat`,
+  `voldsoffererstatning`, `nav-saker`, `familierett` – hver med tilhørende
+  underordnede saksider (f.eks. `trafikkskade`, `yrkesskade`, `voldtekt`,
+  `uforetrygd`, `samvaer` osv.)
+
+## Språk
+
+Nettstedet finnes på tre språk, med språkvelger (NO / EN / PL) i menyen:
+
+| Språk | Mappe | Eksempel |
+| --- | --- | --- |
+| Norsk (bokmål) | rot | `index.html` |
+| Engelsk | `en/` | `en/index.html` |
+| Polsk | `pl/` | `pl/index.html` |
+
+Alle tre språkversjonene deler samme `css/`, `js/` og `images/`.
+Skjemameldinger i `js/main.js` tilpasses sidens `<html lang>` automatisk.
 
 ## Struktur
 
 ```
 .
-├── index.html
-├── om-firmaet.html
-├── fagomrader.html
-├── kontakt.html
+├── index.html … (43 norske sider i rot)
+├── en/         # engelsk versjon (43 sider)
+├── pl/         # polsk versjon (43 sider)
 ├── css/style.css
 ├── js/main.js
-├── images/                  # portrett + medlemslogo
+├── images/                  # portretter (8 ansatte) + medlemslogo
+├── partials/tpl-fag.html    # delt sidemal (ikke lenket)
 └── .github/workflows/pages.yml   # auto-publisering til GitHub Pages
 ```
 

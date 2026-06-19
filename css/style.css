@@ -612,6 +612,9 @@ img { max-width: 100%; display: block; }
     display: none;
   }
   .nav-links .has-sub.open .submenu { display: block; }
+  /* nullstill desktop hover/focus-transform så undermenyen ikke skyves til venstre på mobil */
+  .nav-links .has-sub:hover .submenu,
+  .nav-links .has-sub:focus-within .submenu { transform: none; left: auto; }
   .submenu a { padding: 0.85rem var(--pad); border-bottom: 1px solid var(--line); }
   .nav-links .parent .caret { float: right; transition: transform .2s ease; }
   .nav-links .has-sub.open .parent .caret { transform: rotate(180deg); }
